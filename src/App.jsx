@@ -1,11 +1,16 @@
 import React from 'react';
+import List from './List.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      items: []
+      items: [
+        {id: 1, name: 'Make cake', completed: false},
+        {id: 2, name: 'Write song', completed: false},
+        {id: 3, name: 'Seize the World', completed: false}
+      ]
     };
 
     this.add = this.add.bind(this);
@@ -14,27 +19,26 @@ class App extends React.Component {
   }
 
   add(item) {
-    this.setState({items: [...this.state.items, item]});
+    this.setState({items: [item, ...this.state.items]});
   }
 
   toggle(item) {
     const items = this.state.items;
-    this.setState({
-      items: items.map(
-        i => i.name == item.name ? {name: item.name, completed: !item.completed} : i)
+    this.setState({items: items.map(
+      i => i.name === item.name ? {name: item.name, completed: !item.completed} : i)
     });
   }
 
   remove(item) {
     const items = this.state.items;
-    this.setState({items: items.filter(i => i != item)});
+    this.setState({items: items.filter(i => i !== item)});
   }
 
   render() {
     const items = this.state.items;
 
     return (
-      <p>Simple to-do list app.</p>
+      <List items={items} toggle={this.toggle} remove={this.remove} />
     );
   }
 }
