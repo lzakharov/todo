@@ -4,8 +4,8 @@ import Item from './Item.jsx';
 
 const List = ({items, toggle, remove}) => (
   <ul>
-    {items.map(item => (
-      <Item key={item.id} item={item} toggle={toggle} remove={remove}/>
+    {items.map((item, i) => (
+      <Item key={i} item={item} toggle={toggle} remove={remove}/>
     ))}
   </ul>
 );
