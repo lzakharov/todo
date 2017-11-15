@@ -1,4 +1,5 @@
 import React from 'react';
+import Container from './Container.jsx';
 import List from './List.jsx';
 
 class App extends React.Component {
@@ -38,7 +39,9 @@ class App extends React.Component {
     const items = this.state.items;
 
     return (
-      <List items={items} toggle={this.toggle} remove={this.remove} />
+      <Container>
+        <List items={items} toggle={this.toggle} remove={this.remove} />
+      </Container>
     );
   }
 }
