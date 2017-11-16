@@ -1,3 +1,3 @@
 # Todo
 
-A simple todo list app.
+A simple React to-do list web app.
