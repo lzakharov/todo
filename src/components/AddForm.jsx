@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from './Form.jsx';
 import {func} from 'prop-types';
 
 export default class AddForm extends React.Component {
@@ -29,14 +30,15 @@ export default class AddForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit}>
         <input
+          className="form-control"
           placeholder="Enter task..."
           type="text"
           value={this.state.value}
           onChange={this.handleChange}
         />
-      </form>
+      </Form>
     );
   }
 }

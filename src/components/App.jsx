@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header.jsx';
 import Container from './Container.jsx';
 import AddForm from './AddForm.jsx';
 import List from './List.jsx';
@@ -41,8 +42,10 @@ class App extends React.Component {
 
     return (
       <Container>
+        <Header />
         <AddForm add={this.add} />
         <List items={items} toggle={this.toggle} remove={this.remove} />
+        <p>Click on the item if it is completed</p>
       </Container>
     );
   }
